@@ -1,0 +1,15 @@
+{
+  "name": "smart-market-watchlist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Don't just watch your stocks. Know what changed. - CODE 2026 hackathon project.",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "build:server": "npm run build --prefix server",
+    "build:client": "npm run build --prefix client",
+    "test:server": "npm run test --prefix server",
+    "seed": "npm run seed --prefix server"
+  }
+}

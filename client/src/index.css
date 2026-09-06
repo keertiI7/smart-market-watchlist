@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-base: 14 17 22;
+  --color-base-raised: 22 27 34;
+  --color-base-overlay: 29 35 44;
+  --color-base-border: 38 46 56;
+  --color-ink: 230 232 235;
+  --color-ink-muted: 139 147 161;
+  --color-ink-faint: 91 100 114;
+  --color-brand: 79 140 255;
+  --color-brand-dim: 47 95 199;
+  --color-signal-high: 232 84 63;
+  --color-signal-medium: 232 162 63;
+  --color-signal-low: 63 191 131;
+  --color-signal-none: 91 100 114;
+}
+
+.light {
+  --color-base: 247 248 250;
+  --color-base-raised: 255 255 255;
+  --color-base-overlay: 237 239 243;
+  --color-base-border: 220 224 230;
+  --color-ink: 23 27 33;
+  --color-ink-muted: 90 99 112;
+  --color-ink-faint: 140 148 160;
+  --color-brand: 47 95 199;
+  --color-brand-dim: 34 74 163;
+  --color-signal-high: 200 50 40;
+  --color-signal-medium: 178 118 12;
+  --color-signal-low: 22 130 90;
+  --color-signal-none: 140 148 160;
+}
+
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: #4f8cff44;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid #4f8cff;
+  outline-offset: 2px;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker-scroll 45s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-glow {
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+@keyframes draw-line {
+  0% {
+    stroke-dashoffset: 1400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-line {
+  stroke-dasharray: 1400;
+  animation: draw-line 10s ease-in-out infinite alternate;
+}
+
+@keyframes candle-flicker {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-candle {
+  animation: candle-flicker 5s ease-in-out infinite;
+}
